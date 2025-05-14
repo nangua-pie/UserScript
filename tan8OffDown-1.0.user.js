@@ -118,7 +118,10 @@
     function replaceDownloadButton() {
         const btn = document.getElementById("BtnDownloadImg");
         if(btn) {
-            btn.addEventListener("click", function(e) {
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+
+            newBtn.addEventListener("click", function(e) {
                 e.preventDefault();
                 generateAndDownloadPDF();
             });
