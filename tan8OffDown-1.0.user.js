@@ -111,7 +111,7 @@
             }
         }
 
-        pdf.save(title + ".pdf");
+        pdf.save(title + yuepuImgType + ".pdf");
     }
 
     // 替换页面上下载 PDF 按钮功能
