@@ -20,6 +20,7 @@
 
     var titleElement = document.querySelector(".yuepu-text-info li:nth-child(2) p");
     var title = titleElement ? titleElement.textContent.trim() : ypid.toString();
+    var filename = title.replace(/[/\\?%*:|"<>]/g, '-');
 
     // 函数：加载图片数据
     function fetchImageAsDataURL(url) {
@@ -111,7 +112,7 @@
             }
         }
 
-        pdf.save(title + yuepuImgType + ".pdf");
+        pdf.save(filename + "-" + yuepuImgType + ".pdf");
     }
 
     // 替换页面上下载 PDF 按钮功能
